@@ -21,10 +21,11 @@ impl QuizGame.start_game{
 }
 
 impl QuizGame.check_answer(ans: str) {
-    if ans.lower() == self.answers[self.index].lower() {
+    answer: str = give_answer(self.answers[self.index]).lower();
+    if ans.lower() == answer {
         print("Correct!");
     } else {
-        print("Wrong. The right answer was: " + self.answers[self.index]);
+        print("Wrong. The right answer was: " + answer);
     }
     if self.index == 4 {
         print("Quiz finished!");

@@ -2,7 +2,10 @@
 
 import from byllm.llm {Model}
 
-glob llm = Model(model_name='gemini/gemini-2.0-flash', verbose=False);
+glob llm = Model(model_name="gemini/gemini-2.5-flash");
+
+"""Give ONLY the exact answer to the riddle, one word or phrase, no explanations, no variations."""
+def give_answer(question: str) -> str by llm();
 
 walker QuizGame {
     has questions: list[str];
